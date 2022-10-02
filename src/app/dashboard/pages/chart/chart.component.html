@@ -1,44 +1,70 @@
  
+<div class="container-fluid position-relative d-flex p-0">
+    <!-- Spinner Start -->
+    <!-- <app-spinner></app-spinner> -->
+    <!-- Spinner End -->
 
-<!-- Chart Start -->
-<div class="container-fluid pt-4 px-4">
-    <div class="row g-4">
-        <div class="col-sm-12 col-xl-6">
-            <div class="bg-secondary rounded h-100 p-4">
-                <h6 class="mb-4">Single Line Chart</h6>
-                <canvas id="line-chart"></canvas>
-            </div>
-        </div>
-        <div class="col-sm-12 col-xl-6">
-            <div class="bg-secondary rounded h-100 p-4">
-                <h6 class="mb-4">Multiple Line Chart</h6>
-                <canvas id="salse-revenue"></canvas>
-            </div>
-        </div>
-        <div class="col-sm-12 col-xl-6">
-            <div class="bg-secondary rounded h-100 p-4">
-                <h6 class="mb-4">Single Bar Chart</h6>
-                <canvas id="bar-chart"></canvas>
-            </div>
-        </div>
-        <div class="col-sm-12 col-xl-6">
-            <div class="bg-secondary rounded h-100 p-4">
-                <h6 class="mb-4">Multiple Bar Chart</h6>
-                <canvas id="worldwide-sales"></canvas>
-            </div>
-        </div>
-        <div class="col-sm-12 col-xl-6">
-            <div class="bg-secondary rounded h-100 p-4">
-                <h6 class="mb-4">Pie Chart</h6>
-                <canvas id="pie-chart"></canvas>
-            </div>
-        </div>
-        <div class="col-sm-12 col-xl-6">
-            <div class="bg-secondary rounded h-100 p-4">
-                <h6 class="mb-4">Doughnut Chart</h6>
-                <canvas id="doughnut-chart"></canvas>
-            </div>
-        </div>
+
+    <!-- Sidebar Start -->
+    <div class="sidebar pe-4 pb-3">
+        <app-side-nav></app-side-nav>
     </div>
+    <!-- Sidebar End -->
+
+
+    <!-- Content Start -->
+    <div class="content">
+        <!-- Navbar Start -->
+        <app-header-top></app-header-top>
+        <!-- Navbar End -->
+        <div class="body-content">
+        <!-- Chart Start -->
+        <div class="container-fluid pt-4 px-4">
+            <div class="row g-4">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="mb-4">Single Line Chart</h6>
+                        <canvas id="line-chart"></canvas>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="mb-4">Multiple Line Chart</h6>
+                        <canvas id="salse-revenue"></canvas>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="mb-4">Single Bar Chart</h6>
+                        <canvas id="bar-chart"></canvas>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="mb-4">Multiple Bar Chart</h6>
+                        <canvas id="worldwide-sales"></canvas>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="mb-4">Pie Chart</h6>
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-secondary rounded h-100 p-4">
+                        <h6 class="mb-4">Doughnut Chart</h6>
+                        <canvas id="doughnut-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Chart end -->
+
+        </div>
+
+    </div>
+    <!-- Content End -->
+    <!-- Back to Top -->
+    <app-scroll-to-top></app-scroll-to-top>
 </div>
-<!-- Chart end -->

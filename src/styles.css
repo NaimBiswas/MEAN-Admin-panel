@@ -14,7 +14,10 @@
     z-index: 99;
 }
 
-
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
 /*** Spinner ***/
 #spinner {
     opacity: 0;
