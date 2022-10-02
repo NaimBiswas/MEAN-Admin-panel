@@ -12,6 +12,8 @@ import { HeaderTopComponent } from './shared/header-top/header-top.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ChartComponent } from './dashboard/pages/chart/chart.component';
 import { ScrollToTopComponent } from './shared/scroll-to-top/scroll-to-top.component';
+import { OrderComponent } from './dashboard/pages/order/order.component';
+import { ProductComponent } from './dashboard/pages/product/product.component';
 
 @NgModule({
   declarations: [	
@@ -23,7 +25,9 @@ import { ScrollToTopComponent } from './shared/scroll-to-top/scroll-to-top.compo
       HeaderTopComponent,
       FooterComponent,
       ChartComponent,
-      ScrollToTopComponent
+      ScrollToTopComponent,
+      OrderComponent,
+      ProductComponent
    ],
   imports: [
     BrowserModule,
