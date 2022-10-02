@@ -15,6 +15,7 @@ import { ScrollToTopComponent } from './shared/scroll-to-top/scroll-to-top.compo
 import { OrderComponent } from './dashboard/pages/order/order.component';
 import { ProductComponent } from './dashboard/pages/product/product.component';
 import { AddProductComponent } from './dashboard/pages/product/add-product/add-product.component';
+import { SuccessComponent } from './shared/alert/success/success.component';
 
 @NgModule({
   declarations: [	
@@ -29,7 +30,8 @@ import { AddProductComponent } from './dashboard/pages/product/add-product/add-p
       ScrollToTopComponent,
       OrderComponent,
       ProductComponent,
-      AddProductComponent
+      AddProductComponent,
+      SuccessComponent
    ],
   imports: [
     BrowserModule,
