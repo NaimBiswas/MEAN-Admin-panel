@@ -2,14 +2,14 @@
     "use strict";
 
     // Spinner
-    var spinner = function () {
-        setTimeout(function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
-            }
-        }, 1);
-    };
-    spinner();
+    // var spinner = function () {
+    //     setTimeout(function () {
+    //         if ($('#spinner').length > 0) {
+    //             $('#spinner').removeClass('show');
+    //         }
+    //     }, 1);
+    // };
+    // spinner();
     
     
     // Back to top button
@@ -20,17 +20,10 @@
             $('.back-to-top').fadeOut('slow');
         }
     });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
 
 
     // Sidebar Toggler
-    $('.sidebar-toggler').click(function () {
-        $('.sidebar, .content').toggleClass("open");
-        return false;
-    });
+
 
 
     // Progress Bar
@@ -42,10 +35,10 @@
 
 
     // Calender
-    $('#calender').datetimepicker({
-        inline: true,
-        format: 'L'
-    });
+    // $('#calender').datetimepicker({
+    //     inline: true,
+    //     format: 'L'
+    // });
 
 
     // Testimonials carousel

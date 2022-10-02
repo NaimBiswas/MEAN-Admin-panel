@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.min(6), Validators.max(6)])
   })
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -33,5 +34,6 @@ export class LoginComponent implements OnInit {
       return;
 
     }
+    this.router.navigate(['dashboard'])
   }
 }
