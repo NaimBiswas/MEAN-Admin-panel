@@ -109,13 +109,13 @@
                                 </div>
                             </div>
                         </div>
-                        <app-success *ngIf="isSubmitSuccess"></app-success>
+                        <!-- <app-success *ngIf="isSubmitSuccess"></app-success> -->
                         <div class="row text-start mt-2">
                             <div class="col-lg-2">
                                 <button (click)="saveChanges()" type="submit" class="btn btn-success">Save Changes</button>
                             </div>
                             <div class="col-lg-2 p-0">
-                                <button type="submit" class="btn btn-danger">Cancel</button>
+                                <button (click)="cancelChanges()" type="submit" class="btn btn-danger">Cancel</button>
                             </div>
                         </div>
                     </div>

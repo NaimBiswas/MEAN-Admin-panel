@@ -13,7 +13,24 @@
     bottom: 45px;
     z-index: 99;
 }
-
+.swal2-popup.swal2-modal.swal2-show{
+    background-color: #191C24 ;
+}
+.swal2-success-circular-line-left{
+    background-color: transparent!important;
+}
+.swal2-success-fix{
+    background-color: transparent!important;
+}
+.swal2-success-circular-line-right{
+    background-color: transparent!important;
+}
+h2#swal2-title {
+    color: floralwhite;
+}
+div#swal2-html-container {
+    color: darkseagreen;
+}
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
