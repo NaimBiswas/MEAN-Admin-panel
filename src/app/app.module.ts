@@ -17,6 +17,7 @@ import { ProductComponent } from './dashboard/pages/product/product.component';
 import { AddProductComponent } from './dashboard/pages/product/add-product/add-product.component';
 import { SuccessComponent } from './shared/alert/success/success.component';
 import { UserComponent } from './dashboard/pages/user/user.component';
+import { AdminComponent } from './dashboard/pages/admin/admin.component';
 
 @NgModule({
   declarations: [	
@@ -33,7 +34,8 @@ import { UserComponent } from './dashboard/pages/user/user.component';
       ProductComponent,
       AddProductComponent,
       SuccessComponent,
-      UserComponent
+      UserComponent,
+      AdminComponent
    ],
   imports: [
     BrowserModule,
