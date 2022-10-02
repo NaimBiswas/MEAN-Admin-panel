@@ -16,6 +16,7 @@ import { OrderComponent } from './dashboard/pages/order/order.component';
 import { ProductComponent } from './dashboard/pages/product/product.component';
 import { AddProductComponent } from './dashboard/pages/product/add-product/add-product.component';
 import { SuccessComponent } from './shared/alert/success/success.component';
+import { UserComponent } from './dashboard/pages/user/user.component';
 
 @NgModule({
   declarations: [	
@@ -31,7 +32,8 @@ import { SuccessComponent } from './shared/alert/success/success.component';
       OrderComponent,
       ProductComponent,
       AddProductComponent,
-      SuccessComponent
+      SuccessComponent,
+      UserComponent
    ],
   imports: [
     BrowserModule,
