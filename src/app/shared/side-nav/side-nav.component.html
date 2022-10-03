@@ -24,6 +24,7 @@
             </div>
         </div> -->
         <a routerLink="/product" class="nav-item nav-link" [ngClass]="location.path().includes('product') ? 'active': ''" routerLinkActive="active"><i class="fa fa-th me-2"></i>Products</a>
+        <a routerLink="/category" class="nav-item nav-link " [ngClass]="location.path().includes('category') ? 'active': ''" routerLinkActive="active"><i class="fas fa-clipboard-list me-2"></i>Categories</a>
         <a routerLink="/user" class="nav-item nav-link" [ngClass]="location.path().includes('user') ? 'active': ''" routerLinkActive="active"><i class="fas fa-users  me-2"></i>Users</a>
         <a routerLink="/admin" class="nav-item nav-link" [ngClass]="location.path().includes('admin') ? 'active': ''" routerLinkActive="active"><i class="fas fa-user-secret me-2"></i>Admins</a>
         <a routerLink="/chart" routerLinkActive="active" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>

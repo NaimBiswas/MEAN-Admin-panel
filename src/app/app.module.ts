@@ -20,6 +20,7 @@ import { UserComponent } from './dashboard/pages/user/user.component';
 import { AdminComponent } from './dashboard/pages/admin/admin.component';
 import { MyProfileComponent } from './dashboard/pages/my-profile/my-profile.component';
 import { AddAdminComponent } from './dashboard/pages/admin/add-admin/add-admin.component';
+import { CategoryComponent } from './dashboard/pages/category/category.component';
 
 @NgModule({
   declarations: [	
@@ -39,7 +40,8 @@ import { AddAdminComponent } from './dashboard/pages/admin/add-admin/add-admin.c
       UserComponent,
       AdminComponent,
       MyProfileComponent,
-      AddAdminComponent
+      AddAdminComponent,
+      CategoryComponent
    ],
   imports: [
     BrowserModule,

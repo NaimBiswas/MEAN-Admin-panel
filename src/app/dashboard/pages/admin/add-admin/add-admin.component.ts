@@ -2,18 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-add-user',
+  selector: 'app-add-admin',
   templateUrl: './add-admin.component.html',
   styleUrls: ['./add-admin.component.css']
 })
 export class AddAdminComponent implements OnInit {
-  isSubmitSuccess: Boolean = false
+
   constructor() { }
 
   ngOnInit(): void {
   }
   saveChanges = ()  =>{
-    this.isSubmitSuccess = true
     // this.router.navigateByUrl('/product')
     Swal.fire('Thank you...', 'Your product has been listed! succesfully!', 'success')
   }
