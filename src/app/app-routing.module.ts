@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './dashboard/pages/admin/admin.component';
 import { ChartComponent } from './dashboard/pages/chart/chart.component';
+import { MyProfileComponent } from './dashboard/pages/my-profile/my-profile.component';
 import { OrderComponent } from './dashboard/pages/order/order.component';
 import { AddProductComponent } from './dashboard/pages/product/add-product/add-product.component';
 import { ProductComponent } from './dashboard/pages/product/product.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'add-product', component: AddProductComponent },
   { path: 'user', component: UserComponent },
   { path: 'admin', component: AdminComponent },
+  { path: 'profile', component: MyProfileComponent },
 ];
 
 @NgModule({

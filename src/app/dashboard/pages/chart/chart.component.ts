@@ -12,6 +12,8 @@ export class ChartComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    Chart.defaults.color = "#F1F1F1";
+    Chart.defaults.borderColor = "#878585";
     this.singleLineChart()
     this.multiLineChart()
     this.MultipleBarChart()
@@ -154,4 +156,5 @@ export class ChartComponent implements OnInit {
       }
   });
   }
+
 }
