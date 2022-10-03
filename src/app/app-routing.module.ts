@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AddUserComponent } from './dashboard/pages/admin/add-user/add-user.component';
+import { AddAdminComponent } from './dashboard/pages/admin/add-admin/add-admin.component';
 import { AdminComponent } from './dashboard/pages/admin/admin.component';
 import { ChartComponent } from './dashboard/pages/chart/chart.component';
 import { MyProfileComponent } from './dashboard/pages/my-profile/my-profile.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'add-product', component: AddProductComponent },
   { path: 'user', component: UserComponent },
-  { path: 'add-admin', component: AddUserComponent },
+  { path: 'add-admin', component: AddAdminComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'profile', component: MyProfileComponent },
 ];

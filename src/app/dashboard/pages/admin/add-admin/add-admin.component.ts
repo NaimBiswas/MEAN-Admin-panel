@@ -3,10 +3,10 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-user',
-  templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css']
+  templateUrl: './add-admin.component.html',
+  styleUrls: ['./add-admin.component.css']
 })
-export class AddUserComponent implements OnInit {
+export class AddAdminComponent implements OnInit {
   isSubmitSuccess: Boolean = false
   constructor() { }
 
