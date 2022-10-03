@@ -19,6 +19,7 @@ import { SuccessComponent } from './shared/alert/success/success.component';
 import { UserComponent } from './dashboard/pages/user/user.component';
 import { AdminComponent } from './dashboard/pages/admin/admin.component';
 import { MyProfileComponent } from './dashboard/pages/my-profile/my-profile.component';
+import { AddUserComponent } from './dashboard/pages/admin/add-user/add-user.component';
 
 @NgModule({
   declarations: [	
@@ -37,7 +38,8 @@ import { MyProfileComponent } from './dashboard/pages/my-profile/my-profile.comp
       SuccessComponent,
       UserComponent,
       AdminComponent,
-      MyProfileComponent
+      MyProfileComponent,
+      AddUserComponent
    ],
   imports: [
     BrowserModule,
