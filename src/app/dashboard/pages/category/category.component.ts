@@ -7,13 +7,17 @@ import Swal from 'sweetalert2';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-
+  categoryName: string = ''
+  isSave : boolean = false
   constructor() { }
 
   ngOnInit(): void {
   }
   saveChanges = ()  =>{
     // this.router.navigateByUrl('/product')
-    Swal.fire('Thank you...', 'Your category has been listed! succesfully!', 'success')
+    this.isSave = true
+    if(this.categoryName){
+      Swal.fire('Thank you...', 'Your category has been listed! succesfully!', 'success')
+    }
   }
 }

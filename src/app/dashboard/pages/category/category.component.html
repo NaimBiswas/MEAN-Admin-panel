@@ -27,14 +27,18 @@
                     <div class="row align-items-end">
                         <div class="col-lg-10">
                             <div class="">
-                                <label class="form-label" for="manufacturername">First Name</label>
-                                <input id="manufacturername" name="manufacturername" type="text" class="form-control">
+                                <label class="form-label" for="manufacturername">Category Name</label>
+                                <input [(ngModel)]="categoryName" id="manufacturername" name="manufacturername" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <button (click)="saveChanges()" type="submit" class="btn btn-outline-primary addNewButton">Add New</button>
                         </div>
                     </div>
+                </div>
+                <div *ngIf="isSave && categoryName.length == 0" class="alert alert-primary alert-dismissible fade show mt-2" role="alert">
+                    <i class="fa fa-exclamation-circle me-2"></i>Failed &amp; Category Name cloud not be empty
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
 
