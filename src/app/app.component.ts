@@ -14,12 +14,12 @@ export class AppComponent implements OnInit {
     this.isLoginPage()
   }
   isLoginPage = async( ) => {
-    const isLoggedIn = true
-    if(isLoggedIn){
-      this.router.navigateByUrl('/')
-    }else{
-      this.router.navigateByUrl('/login')
-    }
+    // const isLoggedIn = true
+    // if(isLoggedIn){
+    //   this.router.navigateByUrl('/')
+    // }else{
+    //   this.router.navigateByUrl('/login')
+    // }
   }
   ngOnDestroy(){
     this.isLoginPg = false
