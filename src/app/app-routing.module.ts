@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardGuard } from './core/guards/dashboard.guard';
+import { LoginGuard } from './core/guards/login.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddAdminComponent } from './dashboard/pages/admin/add-admin/add-admin.component';
 import { AdminComponent } from './dashboard/pages/admin/admin.component';
@@ -13,8 +15,8 @@ import { UserComponent } from './dashboard/pages/user/user.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
+  { path: 'dashboard', component: DashboardComponent,canActivate: [DashboardGuard] },
   { path: '', component: DashboardComponent },
   { path: 'chart', component: ChartComponent },
   { path: 'order', component: OrderComponent },
