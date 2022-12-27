@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,13 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginSubmitted: boolean = true
+  email: String = ''
+  password: String = ''
   loginForm: FormGroup = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.min(6), Validators.max(6)])
   })
-  constructor(private el: ElementRef, private router: Router) { }
+  constructor(private el: ElementRef, private router: Router, private authServe: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +37,7 @@ export class LoginComponent implements OnInit {
       return;
 
     }
-    this.router.navigate(['dashboard'])
+    this.authServe.login(this.email, this.password)
+    // this.router.navigate(['dashboard'])
   }
 }
