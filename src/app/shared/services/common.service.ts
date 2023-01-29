@@ -27,5 +27,11 @@ export class CommonService {
     user = JSON.parse(user)
     return user?.name || user?.userName
   }
+  logOut =async () => {
+    this.deleteValue("access")
+    this.deleteValue("refresh")
+    this.deleteValue("user")
+    this.navigate("/login")
+  }
 }
 

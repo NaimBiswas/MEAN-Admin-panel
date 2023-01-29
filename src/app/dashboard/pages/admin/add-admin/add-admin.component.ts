@@ -1,5 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { APISEndPoint } from 'src/app/shared/constant/common.constant';
+import { CreateOrUpdateUserModel } from 'src/app/shared/models/user.model';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-add-admin',
@@ -7,14 +12,51 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-admin.component.css']
 })
 export class AddAdminComponent implements OnInit {
-
-  constructor() { }
+  userName?: string = ''
+  firstName?: string 
+  lastName?: string 
+  middleName?: string 
+  email?: string 
+  password?: string 
+  role?: string 
+  description?: string 
+  image?: string 
+  isActive?: boolean
+  isBlocked?: boolean
+  isDeleted?: boolean
+  acStatus?: string
+  constructor(private http: HttpClient, private adminService: AdminService) { }
 
   ngOnInit(): void {
   }
-  saveChanges = ()  =>{
-    // this.router.navigateByUrl('/product')
-    Swal.fire('Thank you...', 'Your product has been listed! succesfully!', 'success')
+  checkOnChange = async  (key:string, event:any, isUniq:boolean) => {
+   const value = event.target.value;
+    if(isUniq) {
+      // api call for check on key stock 
+        this.http.get(environment.apiUrl+APISEndPoint.iqUnique+ '/'+key+"/"+value+"/"+'user').subscribe({
+          next(value) {
+          },error(err) {
+            Swal.fire(err?.error.message, 'error')
+          },
+        })
+    }
+  }
+  saveChanges = async ()  =>{
+
+   const userModel = new CreateOrUpdateUserModel(this.email,
+    this.password,
+    this.userName,
+    this.firstName,
+    this.lastName,
+    this.middleName,
+    this.role,
+    this.description,
+    this.image,
+    this.isActive,
+    this.isBlocked,
+    this.isDeleted,
+    this.acStatus)
+   this.adminService.saveAdmin(userModel)
   }
   cancelChanges  = async () => {
     Swal.fire({

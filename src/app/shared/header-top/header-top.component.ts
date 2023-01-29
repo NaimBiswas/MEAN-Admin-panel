@@ -21,6 +21,7 @@ export class HeaderTopComponent implements OnInit {
   }
   logOut =async () => {
     this.common.deleteValue("access")
+    this.common.deleteValue("refresh")
     this.common.deleteValue("user")
     this.common.navigate("/login")
   }
