@@ -23,7 +23,7 @@ export class AdminService {
   }
 
   saveAdmin = async (userModel:CreateOrUpdateUserModel) => {
-    this.http.post(environment.apiUrl+APISEndPoint.saveAdmin, userModel, {headers: {'token': this.token, "type": "refresh"}}).subscribe(value => {
+    this.http.post(environment.apiUrl+APISEndPoint.saveAdmin, userModel).subscribe(value => {
     Swal.fire({
       title: 'You are about to end',
       text: "Admin has been created successfully",

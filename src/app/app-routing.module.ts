@@ -17,16 +17,16 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
   { path: 'dashboard', component: DashboardComponent,canActivate: [DashboardGuard] },
-  { path: '', component: DashboardComponent },
-  { path: 'chart', component: ChartComponent },
-  { path: 'order', component: OrderComponent },
-  { path: 'product', component: ProductComponent },
-  { path: 'add-product', component: AddProductComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'add-admin', component: AddAdminComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'profile', component: MyProfileComponent },
-  { path: 'category', component: CategoryComponent },
+  { path: '', component: DashboardComponent,canActivate: [DashboardGuard] },
+  { path: 'chart', component: ChartComponent,canActivate: [DashboardGuard] },
+  { path: 'order', component: OrderComponent ,canActivate: [DashboardGuard]},
+  { path: 'product', component: ProductComponent,canActivate: [DashboardGuard] },
+  { path: 'add-product', component: AddProductComponent,canActivate: [DashboardGuard] },
+  { path: 'user', component: UserComponent,canActivate: [DashboardGuard] },
+  { path: 'add-admin', component: AddAdminComponent,canActivate: [DashboardGuard] },
+  { path: 'admin', component: AdminComponent,canActivate: [DashboardGuard] },
+  { path: 'profile', component: MyProfileComponent,canActivate: [DashboardGuard] },
+  { path: 'category', component: CategoryComponent,canActivate: [DashboardGuard] },
 ];
 
 @NgModule({

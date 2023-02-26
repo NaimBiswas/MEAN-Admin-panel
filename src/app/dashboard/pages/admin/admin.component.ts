@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
     this.getAllAdmin('1')
   }
   getAllAdmin =async (page:any, limit=10,) => {
-    this.http.get(environment.apiUrl+APISEndPoint.getAllAdmin,{headers: {'token': this.token, "type": "refresh", "page":page.toString(), "limit":'10'}}).subscribe((_admins:any) => {
+    this.http.get(environment.apiUrl+APISEndPoint.getAllAdmin).subscribe((_admins:any) => {
       this.users = _admins.results
       this.response = _admins
     }, err => {

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { AdminComponent } from './dashboard/pages/admin/admin.component';
 import { MyProfileComponent } from './dashboard/pages/my-profile/my-profile.component';
 import { AddAdminComponent } from './dashboard/pages/admin/add-admin/add-admin.component';
 import { CategoryComponent } from './dashboard/pages/category/category.component';
+import { AuthInterceptor } from './security/interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [	
@@ -53,7 +54,9 @@ import { CategoryComponent } from './dashboard/pages/category/category.component
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
