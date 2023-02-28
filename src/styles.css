@@ -9,9 +9,13 @@
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
-    bottom: 45px;
+    right: 10px;
+    bottom: 10px;
     z-index: 99;
+    opacity: .3;
+}
+.back-to-top:hover{
+    opacity: 1;
 }
 .swal2-popup.swal2-modal.swal2-show{
     background-color: #191C24 ;
