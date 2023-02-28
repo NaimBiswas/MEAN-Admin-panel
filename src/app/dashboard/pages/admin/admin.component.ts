@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
   }
   getAllAdmin =async (page:any, limit=10) => {  
     this.showDataLoader = true;
-    this.http.get(environment.apiUrl+APISEndPoint.getAllAdmin,{headers: this.commonService.generatePageChangeHeader(page, limit)}).subscribe((_admins:any) => {
+    this.http.get(environment.apiUrl+APISEndPoint.getAllAdmin+'?role=admin',{headers: this.commonService.generatePageChangeHeader(page, limit)}).subscribe((_admins:any) => {
       this.users = _admins.results
       this.response = _admins
       this.showDataLoader = false
