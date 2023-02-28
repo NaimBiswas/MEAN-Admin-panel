@@ -12,7 +12,8 @@ import { CommonService } from '../services/common.service';
 export class PaginationComponent implements OnInit {
   @Input() data:any;
   @Input() response:any;
-  @Output() newItemEvent = new EventEmitter<number>();
+  @Input() isLoading:boolean | any;
+  @Output() pageChangeEvent = new EventEmitter<number>();
   constructor(private http:HttpClient, private commonService: CommonService) { }
 
   ngOnInit(): void {
@@ -21,6 +22,6 @@ export class PaginationComponent implements OnInit {
     
   }
   addNewItem(value: number) {    
-    this.newItemEvent.emit(value);
+    this.pageChangeEvent.emit(value);
   }
 }

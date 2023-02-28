@@ -3,5 +3,6 @@ export const APISEndPoint = {
     registration: 'auth/register',
     iqUnique: "isUnique",
     saveAdmin: 'users/manageUsers',
-    getAllAdmin: 'users/getUsers'
+    getAllAdmin: 'users/getUsers',
+    getAllUsers: 'users/getUsers'
 }
