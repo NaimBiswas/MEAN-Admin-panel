@@ -24,16 +24,16 @@ export class ErrorInterceptor implements HttpInterceptor {
         } else {
           // server-side error
           console.log(error.status, error.error.message);
-          if(error.status === 401) {
-            const message = "You session has been expired. Kindly login and try again"
+          var message = ''
+          if(error.status === 401 ) {
+            message = error.error.message
             Swal.fire({position: 'bottom-end',
             icon: 'error',
             title: message,
             showConfirmButton: false,
-            timer: 1500})
+            timer: 2000})
             this.common.logOut()    
-          }
-        }
+          }}
         return throwError(errorMessage);
       })
     );

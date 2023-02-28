@@ -17,6 +17,9 @@
 .back-to-top:hover{
     opacity: 1;
 }
+.swal2-popup {
+    font-size: 14px !important;
+}
 .swal2-popup.swal2-modal.swal2-show{
     background-color: #191C24 ;
 }
