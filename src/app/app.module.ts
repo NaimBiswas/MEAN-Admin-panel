@@ -23,7 +23,11 @@ import { AdminComponent } from './dashboard/pages/admin/admin.component';
 import { MyProfileComponent } from './dashboard/pages/my-profile/my-profile.component';
 import { AddAdminComponent } from './dashboard/pages/admin/add-admin/add-admin.component';
 import { CategoryComponent } from './dashboard/pages/category/category.component';
-import { AuthInterceptor } from './security/interceptor/auth.interceptor';
+import { AuthInterceptor } from './core/interceptor/auth.interceptor';
+import { PaginationComponent } from './shared/pagination/pagination.component';
+import { ErrorInterceptor } from './core/error-handler.service';
+import { DataLoaderComponent } from './shared/data-loader/data-loader.component';
+import { ErrorShowPopupComponent } from './shared/error-show-popup/error-show-popup.component';
 
 @NgModule({
   declarations: [	
@@ -44,7 +48,10 @@ import { AuthInterceptor } from './security/interceptor/auth.interceptor';
       AdminComponent,
       MyProfileComponent,
       AddAdminComponent,
-      CategoryComponent
+      CategoryComponent,
+      PaginationComponent,
+      DataLoaderComponent,
+      ErrorShowPopupComponent
    ],
   imports: [
     BrowserModule,
@@ -55,7 +62,8 @@ import { AuthInterceptor } from './security/interceptor/auth.interceptor';
     BrowserAnimationsModule,
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true},
+    {provide:HTTP_INTERCEPTORS, useClass:ErrorInterceptor, multi:true}
   ],
   bootstrap: [AppComponent]
 })
