@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,21 @@ export class CommonService {
     let user: any= await this.getValue('user')
     user = JSON.parse(user)
     return user?.name || user?.userName
+  }
+  generatePageChangeHeader (page:number | any, limit:number | any) {
+    return  {
+      page:page.toString(),
+      limit:limit.toString()
+    }
+  }
+  messageToShow (message:string, position: string | any, icon:string | any, showConfirmButton:boolean | any, timer:number | any) {
+    Swal.fire({
+      position: position,
+      icon: icon,
+      title: message,
+      showConfirmButton: showConfirmButton,
+      timer: timer
+    })
   }
   logOut =async () => {
     this.deleteValue("access")
