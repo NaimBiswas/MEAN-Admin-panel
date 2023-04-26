@@ -36,8 +36,8 @@ export class CommonService {
       limit:limit.toString()
     }
   }
-  async getData  (urlWithQuery:string) {
-    const apiData = await  this.http.get(environment.apiUrl+urlWithQuery).toPromise()
+  async getData  (urlWithQuery:string, page:Number =1, limit:number =10) {
+    const apiData = await  this.http.get(environment.apiUrl+urlWithQuery, {headers: this.generatePageChangeHeader(page, limit)}).toPromise()
     return apiData
   }
   messageToShow (message:string, position: string | any, icon:string | any, showConfirmButton:boolean | any, timer:number | any) {

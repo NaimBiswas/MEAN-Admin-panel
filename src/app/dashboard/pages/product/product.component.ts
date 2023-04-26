@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { APISEndPoint } from 'src/app/shared/constant/common.constant';
+import { CommonService } from 'src/app/shared/services/common.service';
 
 @Component({
   selector: 'app-product',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
-  constructor() { }
+  allProduct!:any
+  response!:any
+  showDataLoader: boolean = false
+  constructor(private _commonService : CommonService) { }
 
   ngOnInit(): void {
+    this.getAllProduct(1)
+  }
+  async getAllProduct(page:any, limit=10) {
+    this.showDataLoader = true
+    const allProduct:any = await this._commonService.getData(APISEndPoint.getAllProducts, page, limit)
+    this.allProduct = allProduct.data
+    this.response = {page:1, totalPages:1, totalResults: allProduct?.dataCount}
+    this.showDataLoader = false
   }
 
+  pageChange = async (page:any) =>{
+    this.getAllProduct(page)
+  }
 }
