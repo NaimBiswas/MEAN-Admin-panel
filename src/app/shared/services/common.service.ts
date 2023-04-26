@@ -1,5 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
 @Injectable({
@@ -8,7 +10,7 @@ import Swal from 'sweetalert2';
 export class CommonService {
   userName: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient,) { new HttpHeaders({'Access-Control-Allow-Origin': '*'})}
 
   setValue = async (key:string,value:string) => {
     localStorage.setItem(key, value)
@@ -33,6 +35,10 @@ export class CommonService {
       page:page.toString(),
       limit:limit.toString()
     }
+  }
+  async getData  (urlWithQuery:string) {
+    const apiData = await  this.http.get(environment.apiUrl+urlWithQuery).toPromise()
+    return apiData
   }
   messageToShow (message:string, position: string | any, icon:string | any, showConfirmButton:boolean | any, timer:number | any) {
     Swal.fire({

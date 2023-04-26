@@ -314,3 +314,6 @@ div#swal2-html-container {
     background: var(--dark);
     border-color: var(--primary);
 }
+.cardFont{
+    font-size: 22px!important;
+}

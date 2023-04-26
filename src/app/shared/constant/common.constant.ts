@@ -4,5 +4,6 @@ export const APISEndPoint = {
     iqUnique: "isUnique",
     saveAdmin: 'users/manageUsers',
     getAllAdmin: 'users/getUsers',
-    getAllUsers: 'users/getUsers'
+    getAllUsers: 'users/getUsers',
+    salesWithQuery: 'sales?query='
 }

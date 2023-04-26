@@ -23,38 +23,42 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4 pb-5">
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6 *ngIf="todaySales == 0 || todaySales" class="mb-0 cardFont"> ${{todaySales}} </h6>
+                                <img *ngIf="todaySales == undefined" class="mb-0" height="25" src="assets/img/spinnerLoader.gif" alt="" srcset="">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4 pb-5">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6  *ngIf="totalSales == 0 || totalSales"  class="mb-0 cardFont">${{totalSales}}</h6>
+                                <img *ngIf="totalSales == undefined" class="mb-0" height="25" src="assets/img/spinnerLoader.gif" alt="" srcset="">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4 pb-5">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6   *ngIf="todayRevenue == 0 || todayRevenue" class="mb-0 cardFont">${{todayRevenue}}</h6>
+                                <img *ngIf="todayRevenue == undefined" class="mb-0" height="25" src="assets/img/spinnerLoader.gif" alt="" srcset="">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4 pb-5">
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6  *ngIf="totalRevenue == 0 || totalRevenue"  class="mb-0 cardFont">${{totalRevenue}}</h6>
+                                <img *ngIf="totalRevenue == undefined" class="mb-0" height="25" src="assets/img/spinnerLoader.gif" alt="" srcset="">
                             </div>
                         </div>
                     </div>
