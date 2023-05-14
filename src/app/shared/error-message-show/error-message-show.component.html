@@ -1,0 +1,5 @@
+<div class="error-msg m-1" *ngIf="model.controls[name]?.status == 'INVALID' &&  (model.controls[name]?.dirty || model.controls[name]?.touched)">
+    <span *ngIf="model.controls[name].errors?.['required']" class="text-danger fontStyle" >{{title}} is required</span>
+    <span *ngIf="model.controls[name].errors?.['min']" class="text-danger fontStyle"> {{title}} Should be getter than or equal to 2 && less than or equal to  50</span>
+    <span *ngIf="model.controls[name].errors?.['pattern']" class="text-danger fontStyle"> Invalid pattern</span>
+ </div>

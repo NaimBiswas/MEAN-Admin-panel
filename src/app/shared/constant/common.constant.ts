@@ -6,5 +6,6 @@ export const APISEndPoint = {
     getAllAdmin: 'users/getUsers',
     getAllUsers: 'users/getUsers',
     salesWithQuery: 'sales?query=',
-    getAllProducts: 'product'
+    getAllProducts: 'product',
+    category: 'category',
 }

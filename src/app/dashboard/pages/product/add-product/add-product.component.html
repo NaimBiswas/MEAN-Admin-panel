@@ -20,105 +20,114 @@
             <!-- alert  -->
             <div class="container-fluid pt-4 px-4">
                 <div class="col-sm-12 col-xl-12">
-                    <div class="bg-secondary rounded h-100 p-4  mb-3">
-                        <h6 class="mb-4">Product Details</h6>
-                        <div class="form-floating mb-3">
-                            <div class="col-xl-12 col-md-12">
-                                <label for="floatingInput">Product Name</label>
-                                <input type="text" class="form-control my-2" id="floatingInput">
+                    <form  #form="ngForm">
+                        <div [formGroup]="productDetails" class="bg-secondary rounded h-100 p-4  mb-3">
+                            <h6 class="mb-4">Product Details</h6>
+                            <div class="form-floating mb-3">
+                                <div class="col-xl-12 col-md-12">
+                                    <label for="floatingInput">Product Name</label>
+                                    <input  formControlName="name" name="name" type="text" class="form-control my-2" id="floatingInput">
+                                </div>
+                                <app-error-message-show [model]="productDetails" [title]="'Name'" [name]="'name'"></app-error-message-show>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label" for="manufacturerName">Manufacturer Name</label>
+                                        <input id="manufacturerName" formControlName="manufacturerName" name="manufacturerName" type="text" class="form-control">
+                                    </div>
+                                    <app-error-message-show [model]="productDetails" [title]="'Manufacturer Name'" [name]="'manufacturerName'"></app-error-message-show>
+                                </div>
+                                <div class="col-lg-4">
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label" for="manufacturerBrand">Manufacturer Brand</label>
+                                        <input id="manufacturerBrand" formControlName="manufacturerBrand" name="manufacturerBrand" type="text" class="form-control">
+                                    </div>
+                                    <app-error-message-show [model]="productDetails" [title]="'Manufacturer Brand'" [name]="'manufacturerBrand'"></app-error-message-show>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="price">Price</label>
+                                        <input id="price" formControlName="price" name="price" type="number" class="form-control">
+                                    </div>
+                                    <app-error-message-show [model]="productDetails" [title]="'Price'" [name]="'price'"></app-error-message-show>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="discount">Discount %</label>
+                                        <input id="discount" formControlName="discount" name="discount" type="number" class="form-control">
+                                    </div>
+                                    <app-error-message-show [model]="productDetails" [title]="'Discount'" [name]="'discount'"></app-error-message-show>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="discountPrice">Price After Discount</label>
+                                        <input id="discountPrice" formControlName="discountPrice" name="discountPrice" type="number" class="form-control">
+                                    </div>
+                                    <app-error-message-show [model]="productDetails" [title]="'Price After Discount'" [name]="'discountPrice'"></app-error-message-show>
+                                </div>
+                            </div>
+                            
+                            <div class="form-floating mb-3 d-flex justify-content-between">
+                                <div class="col-xl-12 col-md-12">
+                                    <label for="floatingInput">Category</label>
+                                    <select (change)="setCategory($event)" ngModel="0"  ng-options="item for categories in name" formControlName="category" name="category" class="form-select mb-3 my-2" aria-label="Default select example">
+                                        <option disabled="{{true}}" value="0">Select</option>                                       
+                                        <option *ngFor="let category of categories" value="{{category._id}}">{{category?.name}}</option>                                        
+                                    </select>
+                                </div>
+                                <app-error-message-show [model]="productDetails" [title]="'Category'" [name]="'category'"></app-error-message-show>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea formControlName="description" name="description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px;"></textarea>
+                                <label  for="floatingTextarea">Product Description</label>
+                                <app-error-message-show [model]="productDetails" [title]="'Product Description'" [name]="'description'"></app-error-message-show>
+                            </div>
+                            <div class="form-floating">
                                 <div class="mb-3">
-                                    <label class="form-label" for="manufacturername">Manufacturer Name</label>
-                                    <input id="manufacturername" name="manufacturername" type="text" class="form-control">
+                                    <label for="formFile" class="form-label">Product Image</label>
+                                    <input formControlName="image" class="form-control bg-dark" type="file" id="formFile">
+                                </div>
+                                <app-error-message-show [model]="productDetails" [title]="'Product Image'" [name]="'image'"></app-error-message-show>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="metaTitle">Meta Title (SEO)</label>
+                                        <input formControlName="metaTitle" id="metaTitle" name="metaTitle" type="text" class="form-control">
+                                    </div>
+                                    <app-error-message-show [model]="productDetails" [title]="'Meta Title (SEO)'" [name]="'metaTitle'"></app-error-message-show>
+                                </div>
+                                <div class="col-lg-6">
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label" for="metaKeywrod">Meta Keyword (SEO)</label>
+                                        <input id="metaKeywrod" formControlName="metaKeyword" name="metaKeyword" type="text" class="form-control">
+                                    </div>
+                                    <app-error-message-show [model]="productDetails" [title]="'Meta Keyword (SEO)'" [name]="'metaKeyword'"></app-error-message-show>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3 form-floating mt-2">
+                                        <textarea formGroupName="metaDescription" class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px;"></textarea>
+                                        <label for="floatingTextarea">Meta Description</label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                
-                                <div class="mb-3">
-                                    <label class="form-label" for="manufacturerbrand">Manufacturer Brand</label>
-                                    <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control">
+                            <!-- <app-success *ngIf="isSubmitSuccess"></app-success> -->
+                            <div class="row text-start mt-2">
+                                <div class="col-lg-2" style="max-width: 160px;">
+                                    <button (click)="saveChanges(productDetails)" type="submit" class="btn btn-success">Save Changes</button>
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="mb-3">
-                                    <label class="form-label" for="price">Price</label>
-                                    <input id="price" name="price" type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                
-                                <div class="mb-3">
-                                    <label class="form-label" for="manufacturername">Disscount %</label>
-                                    <input id="manufacturername" name="manufacturername" type="number" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label class="form-label" for="manufacturerbrand">Disscount Price</label>
-                                    <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-floating mb-3 d-flex justify-content-between">
-                            <div class="col-xl-12 col-md-12">
-                                <label for="floatingInput">Category</label>
-                                <select class="form-select mb-3 my-2" aria-label="Default select example">
-                                    <option selected="">Select</option>
-                                    <option value="1">Foods</option>
-                                    <option value="2">Fashion</option>
-                                    <option value="3">Fitness</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px;"></textarea>
-                            <label for="floatingTextarea">Product Description</label>
-                        </div>
-                        <div class="form-floating">
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">Product Image</label>
-                                <input class="form-control bg-dark" type="file" id="formFile">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                
-                                <div class="mb-3">
-                                    <label class="form-label" for="manufacturername">Meta Title (SEO)</label>
-                                    <input id="manufacturername" name="manufacturername" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                
-                                <div class="mb-3">
-                                    <label class="form-label" for="manufacturerbrand">Meta Keyword (SEO)</label>
-                                    <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="mb-3 form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px;"></textarea>
-                                    <label for="floatingTextarea">Meta Description</label>
+                                <div class="col-lg-2 p-0">
+                                    <button (click)="cancelChanges()" type="submit" class="btn btn-danger">Cancel</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- <app-success *ngIf="isSubmitSuccess"></app-success> -->
-                        <div class="row text-start mt-2">
-                            <div class="col-lg-2" style="max-width: 160px;">
-                                <button (click)="saveChanges()" type="submit" class="btn btn-success">Save Changes</button>
-                            </div>
-                            <div class="col-lg-2 p-0">
-                                <button (click)="cancelChanges()" type="submit" class="btn btn-danger">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 

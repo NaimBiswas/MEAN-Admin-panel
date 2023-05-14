@@ -17,14 +17,13 @@ export class ErrorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        let errorMessage = '';
+        let errorMessage:any = '';
         if (error.error instanceof ErrorEvent) {
           // client-side error
           errorMessage = `Error: ${error.error.message}`;
         } else {
           // server-side error
-          console.log(error.status, error.error.message);
-          var message = ''
+          let message = ''
           if(error.status === 401 ) {
             message = error.error.message
             Swal.fire({position: 'bottom-end',
@@ -33,8 +32,10 @@ export class ErrorInterceptor implements HttpInterceptor {
             showConfirmButton: false,
             timer: 2000})
             this.common.logOut()    
-          }}
-        return throwError(errorMessage);
+          }
+        }
+        errorMessage = error
+        return throwError(errorMessage)
       })
     );
   }
