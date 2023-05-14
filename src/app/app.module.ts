@@ -28,6 +28,7 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
 import { ErrorInterceptor } from './core/error-handler.service';
 import { DataLoaderComponent } from './shared/data-loader/data-loader.component';
 import { ErrorShowPopupComponent } from './shared/error-show-popup/error-show-popup.component';
+import { ErrorMessageShowComponent } from './shared/error-message-show/error-message-show.component';
 
 @NgModule({
   declarations: [	
@@ -51,7 +52,8 @@ import { ErrorShowPopupComponent } from './shared/error-show-popup/error-show-po
       CategoryComponent,
       PaginationComponent,
       DataLoaderComponent,
-      ErrorShowPopupComponent
+      ErrorShowPopupComponent,
+      ErrorMessageShowComponent
    ],
   imports: [
     BrowserModule,
