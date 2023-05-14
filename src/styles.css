@@ -23,6 +23,12 @@
 .swal2-popup.swal2-modal.swal2-show{
     background-color: #191C24 ;
 }
+.swal2-popup.swal2-toast.swal2-icon-error.swal2-show{
+    background-color: #191C24 ;
+}
+.border-red{
+    border: 1px solid red !important;
+}
 .swal2-success-circular-line-left{
     background-color: transparent!important;
 }
