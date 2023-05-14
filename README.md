@@ -1,27 +1,15 @@
-# EcomAdminPanel
+# EcomAdminPanel (Naim Biswas)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+## GO LIVE: https://e-com-admin.vercel.app/
 
-## Development server
+## eCom-Admin login Page
+![image](https://github.com/NaimBiswas/MEAN-Admin-panel/assets/67551591/85ed674e-4752-4154-bf54-f0f3c940288b)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## eCom-Admin Dashboard Page
+![image](https://github.com/NaimBiswas/MEAN-Admin-panel/assets/67551591/16fc5bb5-441b-4e0a-804b-758c15d53965)
 
-## Code scaffolding
+## eCom-Admin product creation Page
+![image](https://github.com/NaimBiswas/MEAN-Admin-panel/assets/67551591/99e599ad-1cc4-47ae-8983-f4ad01e6b46c)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## eCom-Admin Sells Static Page
+![image](https://github.com/NaimBiswas/MEAN-Admin-panel/assets/67551591/d9fd2dd7-c3d1-4abf-afeb-f647fd6fc894)
