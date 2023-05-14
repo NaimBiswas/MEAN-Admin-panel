@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CategoryType, ProductDetails } from 'src/app/shared/interface/interface';
+import { ProductModel } from 'src/app/shared/models/product.model';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -8,15 +12,58 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+  constructor(private router:Router,private _productService: ProductService, private el: ElementRef) { }
   isSubmitSuccess: boolean = false
-  constructor(private router:Router) { }
-
+  regex = '^[a-zA-Z]+$';
+  categories!: Array<CategoryType>;
+  productDetails: FormGroup = new FormGroup({
+    name: new FormControl("", [Validators.required, Validators.min(2,), Validators.max(50), Validators.pattern(this.regex)]),
+    manufacturerBrand : new FormControl("",[Validators.required, Validators.min(2,), Validators.max(50), Validators.pattern(this.regex)]),
+    manufacturerName: new FormControl("",[Validators.required, Validators.min(2,), Validators.max(50), Validators.pattern(this.regex)]),
+    price: new FormControl("",[Validators.required]),
+    discount: new FormControl("",[Validators.required]),
+    discountPrice: new FormControl("",[Validators.required]),
+    category: new FormControl({},[Validators.required]),
+    description: new FormControl("",[Validators.required, Validators.min(2), Validators.max(50)]),
+    image: new FormControl("",[Validators.required, Validators.min(1)]),
+    metaTitle: new FormControl("", [Validators.required, Validators.min(2), Validators.max(50)]),
+    metaKeyword: new FormControl("",[Validators.required, Validators.min(2), Validators.max(50)]),
+    metaDescription: new FormControl(""),
+  })
   ngOnInit(): void {
+    this.getCategories()
   }
-  saveChanges = ()  =>{
+  async getCategories() {
+    const data  = await this._productService.getProductCategories()
+    this.categories = data?.data
+  }
+  setCategory(event:any):void {
+    const category:CategoryType[] = this.categories.filter(_cat => _cat._id === event.target.value)
+    this.productDetails.value.category = {
+      categoryId: category[0]._id,
+      name: category[0].name
+    }
+  }
+  ngDoCheck(changes:any): void {
+    if (this.productDetails.invalid) {
+      for (const key of Object.keys(this.productDetails.controls)) {
+        if (this.productDetails.controls[key].invalid && this.productDetails.controls[key].touched) {
+          const invalidControl = this.el.nativeElement.querySelector(
+            '[formcontrolname="' + key + '"]',
+          );
+          // invalidControl.focus();
+          invalidControl.classList.add("border-red")
+        }
+      }
+  }
+}
+  saveChanges = async (productDetails: ProductDetails | any)  =>{
     this.isSubmitSuccess = true
+    const productModel:ProductDetails = new ProductModel(productDetails.value).createProductModel()
+    console.log('>>>>>>>>>>>', productModel)
+    const productService = await this._productService.saveProduct(productModel)
     // this.router.navigateByUrl('/product')
-    Swal.fire('Thank you...', 'Your product has been listed! succesfully!', 'success')
+    // Swal.fire('Thank you...', 'Your product has been listed! succesfully!', 'success')
   }
   cancelChanges  = async () => {
     Swal.fire({
