@@ -38,7 +38,7 @@
                 </div>
                 <div *ngIf="isSave && categoryName.length == 0" class="alert alert-primary alert-dismissible fade show mt-2" role="alert">
                     <i class="fa fa-exclamation-circle me-2"></i>Failed &amp; Category Name cloud not be empty
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" (click)="isSave = false" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
 
