@@ -11,7 +11,7 @@ import { AuthService } from '../shared/services/auth.service';
 export class LoginComponent implements OnInit {
   loginSubmitted: boolean = true
   showLoadingLoader: boolean = false;
-  email: String = 'naim@ecom.com'
+  email: String = 'naimbiswas@ecom.com'
   password: String = 'Ecom@123'
   loginForm: FormGroup = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.email]),
