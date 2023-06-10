@@ -19,9 +19,19 @@ interface ProductDetails {
     metaDescription:string,
 }
 interface CategoryType { _id: string,  name: string, }
-
+interface ICategory {
+    name: string, 
+    isActive: boolean, 
+    createdBy: string,
+    modifiedBy: string,
+    createdById: string,
+    modifiedById: string,
+    createdAt: Date,
+    updatedAt: Date,
+}
 export {
     salesRes,
     ProductDetails,
-    CategoryType
+    CategoryType,
+    ICategory
 }
