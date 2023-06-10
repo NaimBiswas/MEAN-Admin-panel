@@ -46,9 +46,14 @@
             </div>
             <!-- <a href="">Forgot Password</a> -->
           </div>
-          <button (click)="onSubmit()" type="submit" class="btn btn-primary py-3 w-100 mb-4">
+          <button (click)="onSubmit()" *ngIf="!showLoadingLoader" type="submit" class="btn btn-primary py-3 w-100 mb-4">
             Sign In
           </button>
+          <button *ngIf="showLoadingLoader" class="btn btn-primary py-3 w-100 mb-4" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span class="visually-show px-2">Loading...</span>
+          </button>
+
         </form>
 
         <!-- <p class="text-center mb-0">

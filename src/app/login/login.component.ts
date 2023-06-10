@@ -10,6 +10,7 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginSubmitted: boolean = true
+  showLoadingLoader: boolean = false;
   email: String = 'naim@ecom.com'
   password: String = 'Ecom@123'
   loginForm: FormGroup = new FormGroup({
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
+    this.showLoadingLoader = true
     if (this.loginForm.invalid) {
       this.loginSubmitted = true;
 
@@ -33,7 +35,7 @@ export class LoginComponent implements OnInit {
           break;
         }
       }
-
+      this.showLoadingLoader = false
       return;
 
     }
