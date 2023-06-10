@@ -79,11 +79,11 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="show-dataLoader" *ngIf="isSave">
+                        <div class="show-dataLoader" *ngIf="isShowDataLoader">
                             <app-data-loader></app-data-loader>
                         </div>
                         <div class="col-sm-12 col-xl-12">
-                            <app-pagination [data]="categories" [response]="response" [isLoading]="isSave" (newItemEvent)="pageChange($event)"></app-pagination>
+                            <app-pagination [data]="categories" [response]="response" [isLoading]="isShowDataLoader" (newItemEvent)="pageChange($event)"></app-pagination>
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class CategoryComponent implements OnInit {
   categoryName: string = ''
+  isShowDataLoader: boolean = false;
   isSave : boolean = false
   response: any;
   categories!: ICategory[]
@@ -38,6 +39,7 @@ export class CategoryComponent implements OnInit {
     }
   }
   getCategories = async (page?:number, limit:number = 10): Promise<void> => {
+    this.isShowDataLoader = true
     try {
       this.response = await this.api.getAllService(APISEndPoint.category.trim(), page, limit)
 
@@ -45,6 +47,7 @@ export class CategoryComponent implements OnInit {
 
       if(results && results.length) {
         this.categories = results
+        this.isShowDataLoader = false
       }
     } catch (error: any) {
       Swal.fire('Failed', error.message, 'error')
