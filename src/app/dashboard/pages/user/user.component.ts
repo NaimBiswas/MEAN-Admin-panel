@@ -24,6 +24,7 @@ export class UserComponent implements OnInit {
       this.users = _admins.results
       this.response = _admins
       this.showDataLoader = false
+      console.log('>>>>>>>>>>>', this.users)
     }, err => {
       console.log(err);
       // this.commonService.messageToShow(err.error.message, 'middle','error',true,2000)

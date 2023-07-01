@@ -34,7 +34,7 @@ export class CommonService {
     return  {
       page:page.toString(),
       limit:limit.toString(),
-      sortby: 'createdAt:1'
+      sortby: 'createdAt:-1'
     }
   }
   async getData  (urlWithQuery:string, page:Number =1, limit:number =10) {

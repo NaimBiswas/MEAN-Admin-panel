@@ -30,9 +30,7 @@
                                     <th scope="col"><input class="form-check-input" type="checkbox"></th>
                                     <th scope="col">Created Date</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Total Order</th>
-                                    <th scope="col">Total Spend</th>
-                                    <th scope="col">Address</th>
+                                    <th scope="col">email</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Contact Num.</th>
                                     <th scope="col">Action</th>
@@ -41,13 +39,11 @@
                             <tbody class="text-center">
                                 <tr *ngFor="let user of users">
                                     <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>{{user?.userName || user?.name}}</td>
-                                    <td>{{user.firstName}}</td>
-                                    <td>{{user.lastName}}</td>
+                                    <td>{{user.createdAt | date:"short"}}</td>
+                                    <td>{{user?.name? user?.name : user?.firstName + " "+user?.lastName }}</td>
                                     <td>{{user.email}}</td>
                                     <td>{{user.acStatus}}</td>
-                                    <td>{{user?.createBy || "Naim Biswas"}}</td>
-                                    <td>{{user.role}}</td>
+                                    <td>{{user?.phoneNumber}}</td>
                                     <td class="justify-content-around d-flex">
                                         <a class="btn btn-sm btn-primary" href="">Block <i
                                                 class="fas fa-user-lock"></i></a>

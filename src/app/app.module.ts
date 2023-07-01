@@ -29,6 +29,7 @@ import { ErrorInterceptor } from './core/error-handler.service';
 import { DataLoaderComponent } from './shared/data-loader/data-loader.component';
 import { ErrorShowPopupComponent } from './shared/error-show-popup/error-show-popup.component';
 import { ErrorMessageShowComponent } from './shared/error-message-show/error-message-show.component';
+import { TranslatorPipe } from './core/pipe/translator.pipe';
 
 @NgModule({
   declarations: [	
@@ -53,7 +54,8 @@ import { ErrorMessageShowComponent } from './shared/error-message-show/error-mes
       PaginationComponent,
       DataLoaderComponent,
       ErrorShowPopupComponent,
-      ErrorMessageShowComponent
+      ErrorMessageShowComponent,
+      TranslatorPipe
    ],
   imports: [
     BrowserModule,

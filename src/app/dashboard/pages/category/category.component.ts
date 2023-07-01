@@ -30,6 +30,7 @@ export class CategoryComponent implements OnInit {
         if(data?.success) {
           this.isSave = false
           this.getCategories()
+          this.categoryName = ''
         }
         Swal.fire('Thank you...', 'Your category has been listed! successfully!', 'success')
       } catch (error:any) {
