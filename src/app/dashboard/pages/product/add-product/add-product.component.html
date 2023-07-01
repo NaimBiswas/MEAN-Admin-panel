@@ -90,7 +90,7 @@
                             <div class="form-floating">
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Product Image</label>
-                                    <input formControlName="image" class="form-control bg-dark" type="file" id="formFile">
+                                    <input (change)="uploadImage($event)" formControlName="image" class="form-control bg-dark" type="file" id="formFile">
                                 </div>
                                 <app-error-message-show [model]="productDetails" [title]="'Product Image'" [name]="'image'"></app-error-message-show>
                             </div>
@@ -119,10 +119,10 @@
                             </div>
                             <!-- <app-success *ngIf="isSubmitSuccess"></app-success> -->
                             <div class="row text-start mt-2">
-                                <div class="col-lg-2" style="max-width: 160px;">
+                                <div class="col-lg-2 mb-2" style="max-width: 160px;">
                                     <button (click)="saveChanges(productDetails)" type="submit" class="btn btn-success">Save Changes</button>
                                 </div>
-                                <div class="col-lg-2 p-0">
+                                <div class="col-lg-2 p-0 mx-2">
                                     <button (click)="cancelChanges()" type="submit" class="btn btn-danger">Cancel</button>
                                 </div>
                             </div>

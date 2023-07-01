@@ -35,7 +35,7 @@ export class AddProductComponent implements OnInit {
   }
   async getCategories() {
     const data  = await this._productService.getProductCategories()
-    this.categories = data?.data
+    this.categories = data?.results
   }
   setCategory(event:any):void {
     const category:CategoryType[] = this.categories.filter(_cat => _cat._id === event.target.value)
@@ -55,9 +55,24 @@ export class AddProductComponent implements OnInit {
           invalidControl.classList.add("border-red")
         }
       }
+    }
   }
-}
+  uploadImage(event:any) {
+    const file: File = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = this.handleReaderLoaded.bind(this);
+    reader.readAsBinaryString(file);
+  }
+  handleReaderLoaded(readerEvt: any) {
+    const binaryString = readerEvt.target.result;
+    const base64textString = btoa(binaryString);
+    this.productDetails.value.image = base64textString
+  }
   saveChanges = async (productDetails: ProductDetails | any)  =>{
+    if(this.productDetails && this.productDetails.status === "INVALID") {
+      this.productDetails.markAllAsTouched();
+      return;
+    }
     this.isSubmitSuccess = true
     const productModel:ProductDetails = new ProductModel(productDetails.value).createProductModel()
     console.log('>>>>>>>>>>>', productModel)
