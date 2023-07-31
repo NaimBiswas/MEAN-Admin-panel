@@ -18,7 +18,9 @@ interface ProductDetails {
     metaKeyword: string,
     metaDescription:string,
 }
-interface CategoryType { _id: string,  name: string, }
+interface CategoryType {
+  id: any, _id: string,  name: string, 
+}
 interface ICategory {
     name: string, 
     isActive: boolean, 

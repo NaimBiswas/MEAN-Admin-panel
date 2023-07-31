@@ -38,9 +38,9 @@ export class AddProductComponent implements OnInit {
     this.categories = data?.results
   }
   setCategory(event:any):void {
-    const category:CategoryType[] = this.categories.filter(_cat => _cat._id === event.target.value)
+    const category:CategoryType[] = this.categories.filter(_cat => _cat.id === event.target.value)
     this.productDetails.value.category = {
-      categoryId: category[0]._id,
+      categoryId: category[0].id,
       name: category[0].name
     }
   }
