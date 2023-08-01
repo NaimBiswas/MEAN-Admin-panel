@@ -77,7 +77,7 @@
                                     <label for="floatingInput">Category</label>
                                     <select (change)="setCategory($event)" ngModel="0"  ng-options="item for categories in name" formControlName="category" name="category" class="form-select mb-3 my-2" aria-label="Default select example">
                                         <option disabled="{{true}}" value="0">Select</option>                                       
-                                        <option *ngFor="let category of categories" value="{{category._id}}">{{category?.name}}</option>                                        
+                                        <option *ngFor="let category of categories" value="{{category.id}}">{{category?.name}}</option>                                        
                                     </select>
                                 </div>
                                 <app-error-message-show [model]="productDetails" [title]="'Category'" [name]="'category'"></app-error-message-show>
