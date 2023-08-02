@@ -18,9 +18,9 @@ export class ProductComponent implements OnInit {
   }
   async getAllProduct(page:any, limit=10) {
     this.showDataLoader = true
-    const allProduct:any = await this._commonService.getData(APISEndPoint.getAllProducts, page, limit)
-    this.allProduct = allProduct.data
-    this.response = {page:1, totalPages:1, totalResults: allProduct?.dataCount}
+    const allProduct:any = await this._commonService.getGinData(APISEndPoint.getAllProducts+'/', page, limit)
+    this.allProduct = allProduct.results
+    this.response = {page:allProduct.page, totalPages:allProduct.totalPages, totalResults: allProduct?.totalResults}
     this.showDataLoader = false
   }
 

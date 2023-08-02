@@ -37,6 +37,18 @@ export class CommonService {
       sortby: 'createdAt:-1'
     }
   }
+  async getGinData (urlWithQuery:string, page:Number =1, limit:number =10) {
+    const paginationObj = this.generatePageChangeHeader(page, limit)
+    urlWithQuery = urlWithQuery+`?page=${paginationObj.page}&limit=${paginationObj.limit}`
+    return fetch(environment.apiGinURL+urlWithQuery).then(response => response.json())
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        throw error;
+      });
+    // const apiData = await  this.http.get(environment.apiGinURL+urlWithQuery, {headers:headers}).subscribe(data => {
+    //   console.log(data)
+    // })
+  }
   async getData  (urlWithQuery:string, page:Number =1, limit:number =10) {
     const apiData = await  this.http.get(environment.apiUrl+urlWithQuery, {headers: this.generatePageChangeHeader(page, limit)}).toPromise()
     return apiData
