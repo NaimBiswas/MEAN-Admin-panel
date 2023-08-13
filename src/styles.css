@@ -17,6 +17,11 @@
 .back-to-top:hover{
     opacity: 1;
 }
+.csvIcon {
+    font-size: 20px;
+    padding-left: 5px;
+    cursor: pointer;
+}
 .swal2-popup {
     font-size: 14px !important;
 }

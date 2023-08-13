@@ -54,7 +54,9 @@ export class CategoryComponent implements OnInit {
       Swal.fire('Failed', error.message, 'error')
     }
   }
-
+  CSVExport = async  () => {
+    window.open(environment.apiGinURL+APISEndPoint.exportCsvCategory)
+  }
   pageChange = async (page:any): Promise<void> => {
     this.getCategories(page)
   }
