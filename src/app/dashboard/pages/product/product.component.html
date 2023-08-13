@@ -21,7 +21,8 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Products</h6>
+                        <h6 class="mb-0">Recent Products</h6> 
+                        <span (click)="CSVExport()">Export <i class="fas fa-file-csv csvIcon text-white"></i></span>
                         <a routerLink="/add-product" class="btn btn-primary">Add Product</a>
                     </div>
                     <div class="table-responsive">

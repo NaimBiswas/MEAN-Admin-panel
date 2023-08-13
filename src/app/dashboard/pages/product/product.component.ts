@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { APISEndPoint } from 'src/app/shared/constant/common.constant';
 import { CommonService } from 'src/app/shared/services/common.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product',
@@ -23,7 +24,9 @@ export class ProductComponent implements OnInit {
     this.response = {page:allProduct.page, totalPages:allProduct.totalPages, totalResults: allProduct?.totalResults}
     this.showDataLoader = false
   }
-
+  CSVExport = async  () => {
+    window.open(environment.apiGinURL+APISEndPoint.exportCsvProduct)
+  }
   pageChange = async (page:any) =>{
     this.getAllProduct(page)
   }

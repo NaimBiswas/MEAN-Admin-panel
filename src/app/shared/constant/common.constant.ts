@@ -9,4 +9,5 @@ export const APISEndPoint = {
     salesWithQuery: 'sales?query=',
     getAllProducts: 'product',
     category: 'category',
+    exportCsvProduct: "export/csv/products"
 }
