@@ -18,7 +18,7 @@
         <!-- Navbar End -->
         <div class="body-content">
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
+                <div class="bg-secondary text-center rounded p-4 mb-2">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Users</h6>
                         <!-- <a href="">Show All</a> -->
@@ -57,12 +57,12 @@
                                 </tr>
                             </tbody>
                         </table>
-                       <div class="show-dataLoader" *ngIf="showDataLoader">
-                            <app-data-loader></app-data-loader>
-                        </div>
-                        <div class="col-sm-12 col-xl-12">
-                            <app-pagination [data]="users" [response]="response" [isLoading]="showDataLoader" (pageChangeEvent)="pageChange($event)"></app-pagination>
-                        </div>
+                    </div>
+                    <div class="show-dataLoader" *ngIf="showDataLoader">
+                        <app-data-loader></app-data-loader>
+                    </div>
+                    <div class="col-sm-12 col-xl-12">
+                        <app-pagination [data]="users" [response]="response" [isLoading]="showDataLoader" (pageChangeEvent)="pageChange($event)"></app-pagination>
                     </div>
                 </div>
             </div>

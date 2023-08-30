@@ -62,12 +62,12 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="show-dataLoader" *ngIf="showDataLoader">
-                            <app-data-loader></app-data-loader>
-                        </div>
-                        <div class="col-sm-12 col-xl-12">
-                            <app-pagination [data]="users" [response]="response" [isLoading]="showDataLoader" (pageChangeEvent)="pageChange($event)"></app-pagination>
-                        </div>
+                    </div>
+                    <div class="show-dataLoader" *ngIf="showDataLoader">
+                        <app-data-loader></app-data-loader>
+                    </div>
+                    <div class="col-sm-12 col-xl-12">
+                        <app-pagination [data]="users" [response]="response" [isLoading]="showDataLoader" (pageChangeEvent)="pageChange($event)"></app-pagination>
                     </div>
                 </div>
             </div>
