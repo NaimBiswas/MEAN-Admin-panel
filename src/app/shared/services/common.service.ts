@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -10,7 +11,11 @@ import Swal from 'sweetalert2';
 export class CommonService {
   userName: any;
 
-  constructor(private router: Router, private http: HttpClient,) { new HttpHeaders({'Access-Control-Allow-Origin': '*'})}
+  constructor(
+    private router: Router, 
+    private http: HttpClient,
+    private toast: ToastrService
+    ) { new HttpHeaders({'Access-Control-Allow-Origin': '*'},)}
 
   setValue = async (key:string,value:string) => {
     localStorage.setItem(key, value)
@@ -40,15 +45,15 @@ export class CommonService {
   async getGinData (urlWithQuery:string, page:Number =1, limit:number =10) {
     const paginationObj = this.generatePageChangeHeader(page, limit)
     urlWithQuery = urlWithQuery+`?page=${paginationObj.page}&limit=${paginationObj.limit}`
-    return fetch(environment.apiGinURL+urlWithQuery).then(response => response.json())
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        throw error;
-      });
-    // const apiData = await  this.http.get(environment.apiGinURL+urlWithQuery, {headers:headers}).subscribe(data => {
-    //   console.log(data)
-    // })
+    const data =  await fetch(environment.apiGinURL+urlWithQuery)
+    console.log('>>>>>>>>>>>', data)
+    if(data.status === 404) {
+      this.toast.error('The route you are looking for might have been removed, had its name changed, or is temporarily unavailable.','Route Not Found')
+      return []
+    }
+    return data.json()
   }
+
   async getData  (urlWithQuery:string, page:Number =1, limit:number =10) {
     const apiData = await  this.http.get(environment.apiUrl+urlWithQuery, {headers: this.generatePageChangeHeader(page, limit)}).toPromise()
     return apiData
