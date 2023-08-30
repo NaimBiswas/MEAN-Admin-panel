@@ -13,6 +13,7 @@ import { AddProductComponent } from './dashboard/pages/product/add-product/add-p
 import { ProductComponent } from './dashboard/pages/product/product.component';
 import { UserComponent } from './dashboard/pages/user/user.component';
 import { LoginComponent } from './login/login.component';
+import { ImportProductComponent } from './dashboard/pages/import-product/import-product.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'chart', component: ChartComponent,canActivate: [DashboardGuard] },
   { path: 'order', component: OrderComponent ,canActivate: [DashboardGuard]},
   { path: 'product', component: ProductComponent,canActivate: [DashboardGuard] },
+  { path: 'import-product', component: ImportProductComponent,canActivate: [DashboardGuard] },
   { path: 'add-product', component: AddProductComponent,canActivate: [DashboardGuard] },
   { path: 'user', component: UserComponent,canActivate: [DashboardGuard] },
   { path: 'add-admin', component: AddAdminComponent,canActivate: [DashboardGuard] },

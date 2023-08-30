@@ -30,6 +30,7 @@ import { DataLoaderComponent } from './shared/data-loader/data-loader.component'
 import { ErrorShowPopupComponent } from './shared/error-show-popup/error-show-popup.component';
 import { ErrorMessageShowComponent } from './shared/error-message-show/error-message-show.component';
 import { TranslatorPipe } from './core/pipe/translator.pipe';
+import { ImportProductComponent } from './dashboard/pages/import-product/import-product.component';
 
 @NgModule({
   declarations: [	
@@ -55,7 +56,8 @@ import { TranslatorPipe } from './core/pipe/translator.pipe';
       DataLoaderComponent,
       ErrorShowPopupComponent,
       ErrorMessageShowComponent,
-      TranslatorPipe
+      TranslatorPipe,
+      ImportProductComponent
    ],
   imports: [
     BrowserModule,
