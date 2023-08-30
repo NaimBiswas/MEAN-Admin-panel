@@ -8,6 +8,7 @@ export const APISEndPoint = {
     getUser: 'users/getUser',
     salesWithQuery: 'sales?query=',
     getAllProducts: 'product',
+    getAllImports: 'imports',
     category: 'category',
     exportCsvProduct: "export/csv/products",
     exportCsvCategory: "export/csv/categories",
