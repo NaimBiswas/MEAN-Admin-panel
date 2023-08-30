@@ -31,6 +31,7 @@
                         [isShowCheckBox]="false" 
                         [data]="data"
                         [actions]="actions"
+                        (actionClickEvent)="onActionClick($event)"
                         ></app-data-grid>
                     </div>
                     <div class="show-dataLoader" *ngIf="showDataLoader">

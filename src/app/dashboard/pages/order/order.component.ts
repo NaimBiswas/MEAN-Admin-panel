@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Color, IResponse } from 'src/app/shared/interface/interface';
 
 @Component({
@@ -8,7 +9,7 @@ import { Color, IResponse } from 'src/app/shared/interface/interface';
 })
 export class OrderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
   showDataLoader: boolean = false;
   response!:  IResponse;
   headers = [
@@ -41,6 +42,19 @@ export class OrderComponent implements OnInit {
       totalResults:this.data.length,
       totalPages:Math.ceil(this.data.length/10),
       page:1
+    }
+  }
+  onActionClick(data: any): void {
+    switch (data.action) {
+      case "Check Details":
+        this.toastr.success("Check Details:Clicked")
+        console.log("Check Details", data);
+        break;
+      case "Cancel":
+        this.toastr.warning("Cancel:Clicked")
+        break;
+      default:
+        break;
     }
   }
   pageChange = async (page:any) =>{

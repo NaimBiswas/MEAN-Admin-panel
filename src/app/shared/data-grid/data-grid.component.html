@@ -13,7 +13,7 @@
             <td *ngFor="let header  of headers">{{item[header.columnName]}}</td>
             
             <td class="justify-content-around" *ngIf="actions && actions.length">
-                <a class="btn btn-sm mx-2"  *ngFor="let item of actions" href="" [ngClass]="item.color?item.color : ''">{{item.title}}</a>
+                <a class="btn btn-sm mx-2"  *ngFor="let ac of actions" [ngClass]="ac.color?ac.color : ''" (click)="actionClick(item, ac)">{{ac.title}}</a>
             </td>
         </tr>
     </tbody>

@@ -12,5 +12,11 @@ export class DataGridComponent {
   @Input() data: Array<any> | undefined;
   @Input() actions: Array<{title: string, color: Color}> | undefined;
   @Input() isShowCheckBox: boolean = false;
-  @Output() selectedChange: EventEmitter<Array<any>> = new EventEmitter<Array<any>>();
+  @Output() actionClickEvent: EventEmitter<Object> = new EventEmitter<Object>();
+
+
+  actionClick(data: any, action: any): void {
+    data.action = action.title;
+    this.actionClickEvent.emit(data);
+  }
 }
