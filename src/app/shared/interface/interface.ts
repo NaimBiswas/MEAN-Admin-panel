@@ -31,9 +31,23 @@ interface ICategory {
     createdAt: Date,
     updatedAt: Date,
 }
+enum Color {
+    PRIMARY = 'btn-primary',
+    SUCCESS ='btn-success',
+    WARNING = 'btn-warning',
+    DANGER = 'btn-danger',
+    INFO = 'btn-info'
+};
+interface IResponse {
+    totalResults: number;
+    totalPages: number;
+    page: number;
+}
 export {
     salesRes,
     ProductDetails,
     CategoryType,
-    ICategory
+    ICategory,
+    Color,
+    IResponse
 }

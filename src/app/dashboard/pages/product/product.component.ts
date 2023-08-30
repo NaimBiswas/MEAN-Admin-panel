@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APISEndPoint } from 'src/app/shared/constant/common.constant';
+import { IResponse } from 'src/app/shared/interface/interface';
 import { CommonService } from 'src/app/shared/services/common.service';
 import { environment } from 'src/environments/environment';
 
@@ -10,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductComponent implements OnInit {
   allProduct!:any
-  response!:any
+  response!:IResponse
   showDataLoader: boolean = false
   constructor(private _commonService : CommonService) { }
 

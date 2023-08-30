@@ -32,6 +32,7 @@ import { ErrorMessageShowComponent } from './shared/error-message-show/error-mes
 import { TranslatorPipe } from './core/pipe/translator.pipe';
 import { ImportProductComponent } from './dashboard/pages/import-product/import-product.component';
 import { ToastrModule } from 'ngx-toastr';
+import { DataGridComponent } from './shared/data-grid/data-grid.component';
 
 @NgModule({
   declarations: [	
@@ -58,7 +59,8 @@ import { ToastrModule } from 'ngx-toastr';
       ErrorShowPopupComponent,
       ErrorMessageShowComponent,
       TranslatorPipe,
-      ImportProductComponent
+      ImportProductComponent,
+      DataGridComponent
    ],
   imports: [
     BrowserModule,
