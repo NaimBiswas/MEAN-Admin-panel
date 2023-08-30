@@ -31,6 +31,7 @@ import { ErrorShowPopupComponent } from './shared/error-show-popup/error-show-po
 import { ErrorMessageShowComponent } from './shared/error-message-show/error-message-show.component';
 import { TranslatorPipe } from './core/pipe/translator.pipe';
 import { ImportProductComponent } from './dashboard/pages/import-product/import-product.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [	
@@ -66,6 +67,14 @@ import { ImportProductComponent } from './dashboard/pages/import-product/import-
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      autoDismiss: true,
+      closeButton: true,
+      countDuplicates : true,
+      preventDuplicates: true,
+      progressAnimation: 'decreasing',
+      progressBar: true,
+    })
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true},

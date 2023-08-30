@@ -1,4 +1,7 @@
 /********** Template CSS **********/
+@import 'ngx-toastr/toastr';
+
+
 :root {
     --primary: #EB1616;
     --secondary: #191C24;
