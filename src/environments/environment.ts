@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   // apiUrl: "http://localhost:3000/api/",
   apiUrl: "https://ecom-admin-api.vercel.app/api/",
-  // apiGinURL: "http://localhost:3001/api/",
-  apiGinURL: "https://go-gin-api-prod.up.railway.app/api/",
+  apiGinURL: "http://localhost:3001/api/",
+  // apiGinURL: "https://go-gin-api-prod.up.railway.app/api/",
 };
 
 /*

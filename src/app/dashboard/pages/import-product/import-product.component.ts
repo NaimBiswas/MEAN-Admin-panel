@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { APISEndPoint } from 'src/app/shared/constant/common.constant';
+import { Color } from 'src/app/shared/interface/interface';
 import { CommonService } from 'src/app/shared/services/common.service';
 import { environment } from 'src/environments/environment';
-
 @Component({
   selector: 'app-import-product',
   templateUrl: './import-product.component.html',
@@ -12,6 +12,18 @@ export class ImportProductComponent {
   allProduct!:any
   response!:any
   showDataLoader: boolean = false
+  headers = [
+    {title: 'Date', columnName: "createdAt"},
+    {title: 'Pro. Name', columnName: "name"},
+    {title: 'Pro. Category', columnName: "category.name"},
+    {title: 'Creator', columnName: "createdBy"},
+    {title: 'Manufacturer Brand', columnName: "manufacturerBrand"},
+    {title: 'Price', columnName: "price"},
+    {title: 'Discount', columnName: "discount"},
+  ]
+  actions = [
+    {title: 'Notification History', icon:"fas fa-bell", color: Color.SUCCESS},
+  ]
   constructor(private _commonService : CommonService) { }
   ngOnInit(): void {
     this.getAllProduct(1)
@@ -28,5 +40,11 @@ export class ImportProductComponent {
   }
   pageChange = async (page:any) =>{
     this.getAllProduct(page)
+  }
+  onActionClick(event: any):void {
+    if(event.action === 'Notification History') {
+      window.alert("One Popup will show with all the notifications")
+    }
+    
   }
 }

@@ -10,7 +10,7 @@ export class DataGridComponent {
 
   @Input() headers: Array<{title: string, columnName: string}> | undefined;
   @Input() data: Array<any> | undefined;
-  @Input() actions: Array<{title: string, color: Color}> | undefined;
+  @Input() actions: Array<{title: string, color: Color, icon?: string}> | undefined;
   @Input() isShowCheckBox: boolean = false;
   @Output() actionClickEvent: EventEmitter<Object> = new EventEmitter<Object>();
 
